@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        :root {
+        --font-family: "poppins", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        font-size: 62.5%;  /*  62.5% * 16px = 10px */
+      }
+      body {
+        font-family: var(--font-family);
+        font-size: 4rem;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-image: linear-gradient(to bottom right, rgba(180, 184, 195, 0.663), rgb(200, 177, 177)), url('image/image1.png');
+        background-position: fixed;
+        background-size: cover;
+      }
+      h1 {
+        text-shadow: 2px 2px 4px #000000;;
+      }
+      button {
+        font-size: 3.5rem;
+        font-weight: 700;
+        padding: 1rem 2rem;
+        border: 2px solid #edeff3;
+        border-radius: 1rem;
+        background: #edeff3;
+        box-shadow: 2px 2px 3px #535355;
+      }
+      button:hover {
+        border: 2px solid #babbbd;
+        border-radius: 1rem;
+        background: #babbbd;
+
+      }
+
+    </style>
+</head>
+<body>
+    <h1 id="counter">0</h1>
+    <button id="decrease-btn" onclick="decrease()">-</button>
+    <button id="reset-btn" onclick="reset()">Reset</button>
+    <button id="increase-btn" onclick="increase()">+</button>
+
+    <script>
+        let count = 0;
+        function increase() {  
+            document.getElementById("counter").textContent = count++;
+        }
+        function decrease() {
+            count--;
+            document.getElementById('counter').textContent = count;
+        }
+        function reset() {
+            count = 0;
+            document.getElementById('counter').textContent = count;
+        }
+    </script>
+    
+
+    
+</body>
+</html>
